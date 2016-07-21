@@ -70,17 +70,55 @@
         animation: swingLeft .5s cubic-bezier(0.47, 0, 0.75, 0.72) infinite alternate;
     }
 
+    .dragon .eye {
+        position: absolute;
+        top: 39px;
+        width: 11px;
+        height: 11px;
+        background: url(./img/eye.png) no-repeat;
+        background-size: contain;
+        z-index: 12;
+    }
+
+    .dragon .eye.left {
+        left: 49px;
+    }
+
+    .dragon .eye.right {
+        left: 118px;
+        transform-origin: 50% 50%;
+        transform: rotate(180deg);
+    }
+
+    .dragon .blush {
+        position: absolute;
+        top: 46px;
+        width: 15px;
+        height: 9px;
+        background: url(./img/blush.png) no-repeat;
+        background-size: 100% 100%;
+        z-index: 11;
+        animation: blush .5s ease infinite alternate;
+    }
+
+    .dragon .blush.left {
+        left: 43px;
+    }
+
+    .dragon .blush.right {
+        left: 120px;
+    }
+
     .dragon .mouth {
         position: absolute;
         top: 52px;
-        left: 48px;
+        left: 49px;
         width: 78px;
         height: 56px;
         background: url(./img/mouth.png) no-repeat;
         background-size: 100%;
         z-index: 11;
         animation: openMouth 1s ease infinite;
-
     }
 
     .dragon .tail-sting {
@@ -169,6 +207,16 @@
         }
     }
 
+    @keyframes blush {
+        0% {
+            opacity: 0;
+        }
+
+        100% {
+            opacity: 1;
+        }
+    }
+
     @keyframes openMouth {
         0% {
             -webkit-clip-path: ellipse(20% 0% at 50% 0);
@@ -252,6 +300,10 @@
             <div class="body"></div>
             <div class="horn-left"></div>
             <div class="horn-right"></div>
+            <div class="eye left"></div>
+            <div class="eye right"></div>
+            <div class="blush left"></div>
+            <div class="blush right"></div>
             <div class="mouth"></div>
             <div class="tail-sting"></div>
         </div>
